@@ -6,16 +6,14 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Configurar el registro
 logging.basicConfig(level=logging.DEBUG)
 
-# Cargar el modelo entrenado
+
 model = joblib.load('modelo.pkl')
 app.logger.debug('Modelo cargado correctamente.')
 
-# Definir media y desviación estándar basadas en el conjunto de entrenamiento
-mean_values = np.array([4.4, 5.17])  # Media de [abdomen, antena]
-std_values = np.array([3.05, 2.65])  # Desviación estándar de [abdomen, antena]
+mean_values = np.array([4.4, 5.17])  
+std_values = np.array([3.05, 2.65])  
 
 @app.route('/')
 def home():
