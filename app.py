@@ -19,12 +19,12 @@ std_values = np.array([3.05, 2.65])  # Desviación estándar de [abdomen, antena
 
 @app.route('/')
 def home():
-    """Renderiza la plantilla del formulario."""
+   
     return render_template('formulario.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    """Realiza una predicción basada en los datos del formulario."""
+   
     try:
         # Obtener los datos enviados en el request
         abdomen = float(request.form['abdomen'])
